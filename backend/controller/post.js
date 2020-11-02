@@ -11,10 +11,10 @@ registration:async(req,res)=>{
     if (UseremailExist){
         return res.send('Email already exists');
     }
-//    //HashPassword
+
    const salt = await bcrypt.genSalt(10);
    const hasedPassword = await bcrypt.hash(req.body.password, salt)
-//    //create new user
+
    const user = new User({
        name:  req.body.name,
        email: req.body.email,
@@ -24,7 +24,6 @@ registration:async(req,res)=>{
   
    try{
        const savedUser = await user.save();
-       console.log("saved",savedUser)
        res.send("successfully Registered!");
    }catch (err) {
        console.log(err)
@@ -36,11 +35,11 @@ login:async(req,res)=>{
     if (!user) return res.status(201).send('Email or password is incorrect!');
     
     
-    //validate
+   
     const validPassword = await bcrypt.compare(req.body.password, user.password)
     if(!validPassword) return res.status(201).send('Invalid Email or Password')
 
-    //create n assign a token
+  
     const token = jwt.sign({id: user._id}, 'voldemort')
     res.header('auth-token', token);
     res.status(200).send(token);
@@ -49,7 +48,7 @@ login:async(req,res)=>{
 todo_new_user:async(req,res)=>{
     const salt = await bcrypt.genSalt(10);
     const hasedPassword = await bcrypt.hash(req.body.password, salt)
-    //create new user
+   
     console.log(req.body)
     const todo = new NewUser({
         name:  req.body.name,
@@ -69,10 +68,9 @@ todo_new_user:async(req,res)=>{
 },
 todo_view_user:async(req,res)=>{
     var myid = req.params.id;
-  console.log('hey',myid)
+
   NewUser.find({created_by: myid})
   .then(users => {
-      console.log(users)
       res.send(users)
   }).catch(err => {
       res.status(500).send("some error occured")
@@ -80,10 +78,8 @@ todo_view_user:async(req,res)=>{
 },
 todo_delete_user:async(req,res)=>{
     var myid = req.params.id;
-    console.log('hey',myid)
     NewUser.findByIdAndDelete({_id: myid})
     .then(users => {
-        console.log(users)
         res.send('Deleted')
     }).catch(err => {
         res.status(500).send("some error occured")
