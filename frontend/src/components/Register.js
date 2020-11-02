@@ -7,7 +7,6 @@ import Button from 'react-bootstrap/Button';
 import {Link} from "react-router-dom";
 import {useForm} from 'react-hook-form';
 import axios from 'axios';
-import Spinner from 'react-bootstrap/Spinner';
 import { useHistory } from 'react-router-dom';
 import Navbar from './navbar'
 function Register() {
@@ -52,9 +51,6 @@ function Register() {
                <Row style={{marginTop:'50px'}}>
                    <Col xs={5}></Col>
                    <Col xs={2}>
-                   {/* <Spinner animation="border" role="status">
-                         <span className="sr-only">Loading...</span>
-                    </Spinner> */}
                    </Col>
                    <Col xs={5}></Col>
                </Row>   
