@@ -29,11 +29,19 @@ function Register() {
     }
 
     return (
-        <Container fluid style={{backgroundColor:"yellow"}}>
+        <div  style={{
+            height: "100%",
+            position: "absolute",
+            left: "0px",
+            width: "100%",
+            overflow: "hidden",
+            backgroundColor: '#F0F8FF',
+          }}>
+              <Container fluid >
             <Navbar/>
            <Row>
                <Col></Col>
-               <Col md='auto'><h2>Signup</h2></Col>
+               <Col md='auto'><h2>Register to website</h2></Col>
                <Col></Col>
            </Row>
            <Row style={{marginTop:'70px'}}>
@@ -91,6 +99,9 @@ function Register() {
                <Col></Col>
            </Row>
        </Container>
+
+        </div>
+        
     )
 }
 

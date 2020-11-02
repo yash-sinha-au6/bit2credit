@@ -10,7 +10,7 @@ return(
     </Link></Navbar.Brand>
     <Nav className="mr-auto" style={{marginRight:"auto 40px"}}>
     <Link to="/signup">Signup</Link>
-
+  
     </Nav>
 
   </Navbar>

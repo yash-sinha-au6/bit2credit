@@ -28,10 +28,16 @@ function MyEdit(props) {
             })
     }
     return (
-        <Container fluid>
+        <div style={{height: "100%",
+        position: "absolute",
+        left: "0px",
+        width: "100%",
+        overflow: "hidden",
+        backgroundColor: '#F0F8FF',}}>
+                  <Container fluid>
            <Row>
                <Col></Col>
-               <Col md='auto'><h3>Edit-Form</h3></Col>
+               <Col md='auto'><h3>Update your Detail</h3></Col>
                <Col></Col>
            </Row>
            <hr/>
@@ -68,6 +74,8 @@ function MyEdit(props) {
                <Col></Col>
            </Row>
        </Container>
+        </div>
+      
     )
 }
 

@@ -31,10 +31,16 @@ useEffect(() => {
 
     console.log('state', state)
     return (
-        <Container fluid>
+        <div style={{height: "100%",
+        position: "absolute",
+        left: "0px",
+        width: "100%",
+        overflow: "hidden",
+        backgroundColor: '#F0F8FF',}}>
+             <Container fluid>
            <Row>
                <Col></Col>
-               <Col md='auto'><h3>Create New User</h3></Col>
+               <Col md='auto'><h3>Please create new user</h3></Col>
                <Col></Col>
            </Row>
            <hr/>
@@ -77,6 +83,9 @@ useEffect(() => {
                <Col></Col>
            </Row>
        </Container>
+
+        </div>
+       
     )
 }
 
